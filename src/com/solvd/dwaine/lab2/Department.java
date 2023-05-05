@@ -14,7 +14,6 @@ public class Department {
     Department(Professor [] professor, String departmentName, String[] courses) {
 
     }
-
     public String getDepartmentName() {
         return departmentName;
     }
@@ -64,5 +63,4 @@ public class Department {
     public void setCourses(Course[] courses) {
         this.courses = courses;
     }
-
 }
