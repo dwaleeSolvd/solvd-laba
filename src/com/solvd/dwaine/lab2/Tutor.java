@@ -1,32 +1,48 @@
 package com.solvd.dwaine.lab2;
 
-public class Tutor {
+public class Tutor extends Person {
+    private String[] tutorCourses;
 
-    private String schedule;
-    String firstName;
-    String lastName;
-    private String studentsAssigned;
+    private String[] schedule;
 
-    public void setSchedule(String schedule) {
+    /*public void startSession(String studentName, String tutorName, String courseName) {
+        String session = "Tutor " + tutorName + " started a session start with " + studentName + " for " + courseName; //"for" + courseName);
+        System.out.println(session);
+    }*/
+
+
+    Tutor(String name, String[] schedule, String[] tutorCourses) {
         this.schedule = schedule;
+        this.tutorCourses = tutorCourses;
+        firstName = name.split(" ")[0];
+        lastName = name.split(" ")[1];
+        setAddress("");
     }
 
-    public void setStudentsAssigned(String studentsAssigned) {
-        this.studentsAssigned = studentsAssigned;
-    }
-
-    public String getSchedule() {
+    public String[] getSchedule() {
         return schedule;
     }
 
-    public String getStudentsAssigned() {
-        return studentsAssigned;
+    public void setSchedule(String[] schedule) {
+        this.schedule = schedule;
     }
 
-    Tutor(String firstName, String lastName, String schedule){
-        firstName = firstName;
-        lastName = lastName;
-        schedule = schedule;
-
+    public String[] getTutorCourses() {
+        return tutorCourses;
     }
+
+    public void setTutorCourses(String[] tutorCourses) {
+        this.tutorCourses = tutorCourses;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " courses count: " + tutorCourses.length;
+    }
+
+    @Override
+    protected double salaryExpectation() {
+        return 5000;
+    }
+
 }
